@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "764883648215",
+    "project_id": "test1-d7319",
+    "storage_bucket": "test1-d7319.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764883648215:android:c5e33eb1d0dcd953163a92",
+        "android_client_info": {
+          "package_name": "com.appsnipp.modernlogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "764883648215-4tf9t2vt2807hh32brh3p83p0ihi92ld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCW90W10Qp0uvBqWl_lhPpJlPfRe1bwEsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "764883648215-4tf9t2vt2807hh32brh3p83p0ihi92ld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
