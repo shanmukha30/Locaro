@@ -66,9 +66,11 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             if(switchUsers.isChecked()) {
                                 startActivity(new Intent(LoginActivity.this, BuyersActivity.class));
+                                finish();
                             }
                             else{
                                 startActivity(new Intent(LoginActivity.this, VendorsActivity.class));
+                                finish();
                             }
                             finish();
                         } else {

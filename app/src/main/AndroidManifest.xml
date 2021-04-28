@@ -17,11 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".NewRequestActivity"></activity>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".VendorsActivity" />
-        <activity android:name=".BuyersActivity" /> <!-- activitys -->
+        <activity android:name=".splashActivity" /> <!-- activitys -->
         <activity
-            android:name=".splashActivity"
+            android:name=".BuyersActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
