@@ -56,24 +56,16 @@ public class BuyersActivity extends AppCompatActivity implements NavigationView.
             return false;
         });*/
 
-        toolbar = findViewById(R.id.buyerToolBar);
-        setSupportActionBar(toolbar);
-
         drawerLayout = findViewById(R.id.drawer_layout);
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Home");
         NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
+        navigationView.setNavigationItemSelectedListener(this);
         toggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar,R.string.navigation_draw_open,R.string.navigation_draw_close);
 
         drawerLayout.addDrawerListener(toggle);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-
-    }
-
-    @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
         toggle.syncState();
+
     }
 
     @Override

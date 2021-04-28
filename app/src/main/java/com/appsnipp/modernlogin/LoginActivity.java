@@ -27,8 +27,6 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.cirLoginButton) Button loginButton;
     @BindView(R.id.registerText) TextView registerText;
     @BindView(R.id.switchUsers) Switch switchUsers;
-    @BindView(R.id.loginProgressBar)
-    ProgressBar loginProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (email.isEmpty() || pass.isEmpty())
                     Snackbar.make(view, "Please fill all the fields", Snackbar.LENGTH_LONG).show();
                 else {
-                    loginProgressBar.setVisibility(View.VISIBLE);
+                    //loginProgressBar.setVisibility(View.VISIBLE);
                     mAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
                             if(switchUsers.isChecked()) {
@@ -74,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                         } else {
                             Snackbar.make(view, "There was an error. Please try again!", Snackbar.LENGTH_LONG).show();
                             Log.e("Error", "Login Error : " + task.getException());
-                            loginProgressBar.setVisibility(View.INVISIBLE);
+                            //loginProgressBar.setVisibility(View.INVISIBLE);
                         }
                     });
                 }

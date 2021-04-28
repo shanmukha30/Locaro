@@ -29,8 +29,6 @@ public class RegisterActivity extends AppCompatActivity {
     @BindView(R.id.confirmPasswordEditText) EditText confirmPasswordEditText;
     @BindView(R.id.cirRegisterButton) Button registerBtn;
     @BindView(R.id.loginText) TextView loginText;
-    @BindView(R.id.regProgressBar)
-    ProgressBar regProgressBar;
 
 
 
@@ -60,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
                 Snackbar.make(v, "Passwords don't match", Snackbar.LENGTH_LONG).show();
             else {
                 FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-                regProgressBar.setVisibility(View.VISIBLE);
+                //regProgressBar.setVisibility(View.VISIBLE);
                 firebaseAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(RegisterActivity.this, task -> {
                             if (task.isSuccessful()) {
@@ -68,7 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                                 finish();
                             } else {
-                                regProgressBar.setVisibility(View.INVISIBLE);
+                                //regProgressBar.setVisibility(View.INVISIBLE);
                                 Toast.makeText(RegisterActivity.this, "Registration failed. Try again", Toast.LENGTH_LONG).show();
                                 Log.e("Info", task.getException().getMessage());
                             }

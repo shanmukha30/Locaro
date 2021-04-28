@@ -12,28 +12,15 @@
        android:layout_width="match_parent"
        android:layout_height="match_parent">
 
-      <include
-          android:id="@+id/include"
-          layout="@layout/buyerbar"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
+      <androidx.appcompat.widget.Toolbar
+          android:id="@+id/toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"
+          android:background="#673AB7"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent"
-          app:menu="@menu/main_menu" />
-
-      <TextView
-          android:id="@+id/textView6"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="10dp"
-          android:fontFamily="@font/arvo"
-          android:text="Home"
-          android:textColor="@color/whiteTextColor"
-          android:textSize="22sp"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent" />
+          app:titleTextColor="#FFFF" />
 
       <!--<androidx.cardview.widget.CardView
           android:id="@+id/NewList"

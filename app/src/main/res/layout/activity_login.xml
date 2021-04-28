@@ -11,15 +11,6 @@
     android:gravity="center"
     android:layout_gravity="center">
 
-    <com.google.android.material.progressindicator.CircularProgressIndicator
-        android:id="@+id/loginProgressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="0dp"
-        android:visibility="invisible" />
 
     <ScrollView
         android:layout_width="match_parent"
