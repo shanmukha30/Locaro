@@ -8,135 +8,393 @@
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     tools:context=".NewRequestActivity">
-
-    <ImageView
-        android:id="@+id/back"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view2"
         android:layout_width="wrap_content"
-        android:layout_height="58dp"
-        android:layout_weight="0.05"
-        android:background="#00BCD4"
-        android:onClick="back"
-        android:padding="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:alpha="0.5"
+        android:background="#FDDE82"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/background"
+        app:lottie_speed="0.1" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="0dp"
-        android:layout_height="58dp"
-        android:layout_weight="0.95"
-        android:background="#00BCD4"
-        android:fontFamily="@font/arvo"
-        android:padding="10dp"
-        android:text="New List"
-        android:textColor="#FBFBFB"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.354"
-        app:layout_constraintStart_toEndOf="@+id/back"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:elevation="10dp"
-        android:fontFamily="@font/amiko_bold"
-        android:padding="10dp"
-        android:shadowRadius="10"
-        android:text="Where do you want the package to be delivered?"
-        android:textColor="#232323"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-    <EditText
-        android:id="@+id/editTextTextMultiLine2"
-        android:layout_width="0dp"
-        android:layout_height="120dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/edittextlayout"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Enter Address"
-        android:inputType="textMultiLine"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:paddingBottom="10dp"
-        android:textColorHint="#7E7373"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:elevation="10dp"
-        android:fontFamily="@font/amiko_bold"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:shadowRadius="10"
-        android:text="Select Country"
-        android:textColor="#232323"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2" />
-
-    <Spinner
-        android:id="@+id/spinner"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/edittextlayout"
-        android:elevation="10dp"
-        android:padding="5dp"
-        android:spinnerMode="dropdown"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dp"
-        android:weightSum="12"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner">
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="4"
-            android:background="@color/darkTextColor" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:layout_weight="4"
-            android:fontFamily="@font/amiko_bold"
-            android:text="Items"
-            android:textAlignment="center"
-            android:textColor="#232323"
-            android:textSize="20sp" />
+            android:orientation="vertical">
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="4"
-            android:background="@color/darkTextColor" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-    </LinearLayout>
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="58dp"
+                    android:layout_weight="0.05"
+                    android:background="#00BCD4"
+                    android:onClick="back"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="0dp"
+                    android:layout_height="58dp"
+                    android:layout_weight="0.95"
+                    android:background="#00BCD4"
+                    android:fontFamily="@font/arvo"
+                    android:padding="10dp"
+                    android:text="New List"
+                    android:textColor="#FBFBFB"
+                    android:textSize="28sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:elevation="10dp"
+                android:fontFamily="@font/amiko_bold"
+                android:padding="10dp"
+                android:shadowRadius="10"
+                android:text="Where do you want the package to be delivered?"
+                android:textColor="#232323"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <EditText
+                android:id="@+id/editTextTextMultiLine2"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edittextlayout"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Enter Address"
+                android:inputType="textMultiLine"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="10dp"
+                android:textColorHint="#7E7373"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:elevation="10dp"
+                android:fontFamily="@font/amiko_bold"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:shadowRadius="10"
+                android:text="Select Country"
+                android:textColor="#232323"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/edittextlayout"
+                android:elevation="10dp"
+                android:padding="5dp"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:weightSum="12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinner">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="4"
+                    android:background="@color/darkTextColor" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_weight="4"
+                    android:fontFamily="@font/amiko_bold"
+                    android:text="Items"
+                    android:textAlignment="center"
+                    android:textColor="#232323"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="4"
+                    android:background="@color/darkTextColor" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/editTextItemName1"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edittextlayout"
+                android:ems="10"
+                android:hint="Item 1"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="#474343"
+                android:textColorHint="#807A7A" />
+
+            <EditText
+                android:id="@+id/editTextItemName2"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edittextlayout"
+                android:ems="10"
+                android:hint="Item 2"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="#474343"
+                android:textColorHint="#807A7A" />
+            <EditText
+                android:id="@+id/editTextItemName3"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edittextlayout"
+                android:ems="10"
+                android:hint="Item 3"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="#474343"
+                android:textColorHint="#807A7A" />
+            <EditText
+                android:id="@+id/editTextItemName4"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edittextlayout"
+                android:ems="10"
+                android:hint="Item 4"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="#474343"
+                android:textColorHint="#807A7A" />
+            <EditText
+                android:id="@+id/editTextItemName5"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edittextlayout"
+                android:ems="10"
+                android:hint="Item 5"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="#474343"
+                android:textColorHint="#807A7A" />
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:elevation="10dp"
+                android:fontFamily="@font/amiko_bold"
+                android:padding="10dp"
+                android:shadowRadius="10"
+                android:text="Select estimated delivery date"
+                android:textColor="#232323"
+                android:textSize="20sp"
+                />
+
+            <EditText
+                android:id="@+id/datepicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittextlayout"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="-Select Date-"
+                android:inputType="textPersonName"
+                android:padding="5dp" />
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:elevation="10dp"
+                android:fontFamily="@font/amiko_bold"
+                android:padding="10dp"
+                android:shadowRadius="10"
+                android:text="Total amount you are offering to pay"
+                android:textColor="#232323"
+                android:textSize="20sp"
+                />
+            <EditText
+                android:id="@+id/editTextAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edittextlayout"
+                android:ems="10"
+                android:hint="Ex. \u20B9 200"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="#474343"
+                android:textColorHint="#807A7A" />
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:elevation="10dp"
+                android:fontFamily="@font/amiko_bold"
+                android:padding="10dp"
+                android:text="Select the range"
+                android:textColor="#232323"
+                android:textSize="20sp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/button_background_blue"
+                    android:elevation="10dp"
+                    android:fontFamily="@font/amiko_bold"
+                    android:onClick="rangeClick"
+                    android:text="5 Km"
+                    android:textColor="#393636" />
+
+                <Button
+                    android:id="@+id/button10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/button_background_blue"
+                    android:elevation="10dp"
+                    android:fontFamily="@font/amiko_bold"
+                    android:onClick="rangeClick"
+                    android:text="10 Km" />
+
+                <Button
+                    android:id="@+id/button15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/button_background_blue"
+                    android:elevation="10dp"
+                    android:fontFamily="@font/amiko_bold"
+                    android:onClick="rangeClick"
+                    android:text="15 Km" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@drawable/range_button_background"
+                android:backgroundTint="#00BCD4"
+                android:elevation="10dp"
+                android:fontFamily="@font/amiko_bold"
+                android:text="Submit List" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

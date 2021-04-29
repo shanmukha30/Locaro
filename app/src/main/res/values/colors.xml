@@ -7,6 +7,7 @@
 
     <!--normal colors-->
     <color name="darkTextColor">#020000</color>
+    <color name="lightBlue">#DEF5F8</color>
 
 
     <!--colors for light mode-->

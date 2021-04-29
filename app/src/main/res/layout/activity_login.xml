@@ -36,6 +36,16 @@
             android:padding="20dp">
 
 
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/amiko_bold"
+                android:gravity="center"
+                android:text="LOCARO"
+                android:textColor="#6C3CC1"
+                android:textSize="30sp" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp">
@@ -130,13 +140,14 @@
             <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
                 android:id="@+id/cirLoginButton"
                 style="@style/loginButton"
-                app:spinning_bar_width="4dp"
-                app:spinning_bar_color="#FFF"
-                android:text="Login"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/loginViewsMargin"
+                android:background="@drawable/range_button_background"
+                android:text="Login"
+                app:initialCornerAngle="27dp"
+                app:spinning_bar_color="#FFF"
                 app:spinning_bar_padding="6dp"
-                app:initialCornerAngle="27dp"/>
+                app:spinning_bar_width="4dp" />
 
             <TextView
                 android:id="@+id/registerText"
