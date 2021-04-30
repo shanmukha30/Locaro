@@ -11,16 +11,6 @@
     android:gravity="center"
     android:layout_gravity="center">
 
-    <com.google.android.material.progressindicator.CircularProgressIndicator
-        android:id="@+id/loginProgressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="0dp"
-        android:visibility="invisible" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,11 +30,23 @@
                 android:id="@+id/textView12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/amiko_bold"
+                android:fontFamily="@font/fredoka_one"
                 android:gravity="center"
                 android:text="LOCARO"
                 android:textColor="#6C3CC1"
                 android:textSize="30sp" />
+
+            <ProgressBar
+                android:id="@+id/loginProgressBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:progressBackgroundTint="#00BCD4"
+                android:visibility="invisible"
+                app:indicatorColor="#00BCD4" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -62,7 +64,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="2dp"
-                    android:layout_marginRight="-128dp"
+                    android:layout_marginRight="-193dp"
                     android:src="@drawable/shop" />
 
             </RelativeLayout>

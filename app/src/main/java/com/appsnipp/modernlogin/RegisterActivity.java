@@ -60,6 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
                 Snackbar.make(v, "Passwords don't match", Snackbar.LENGTH_LONG).show();
             else {
                 FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                registerBtn.setClickable(false);
                 regProgressBar.setVisibility(View.VISIBLE);
                 firebaseAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(RegisterActivity.this, task -> {
@@ -71,6 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 regProgressBar.setVisibility(View.INVISIBLE);
                                 Toast.makeText(RegisterActivity.this, "Registration failed. Try again", Toast.LENGTH_LONG).show();
                                 Log.e("Info", task.getException().getMessage());
+                                registerBtn.setClickable(true);
                             }
                         });
             }
