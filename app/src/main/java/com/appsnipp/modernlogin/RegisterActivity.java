@@ -14,14 +14,24 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
 public class RegisterActivity extends AppCompatActivity {
+
+    FirebaseAuth firebaseAuth;
+    FirebaseFirestore db;
+    String userID;
 
     @BindView(R.id.editTextName) EditText editTextName;
     @BindView(R.id.editTextEmail) EditText emailEditText;
@@ -31,6 +41,8 @@ public class RegisterActivity extends AppCompatActivity {
     @BindView(R.id.loginText) TextView loginText;
     @BindView(R.id.regProgressBar)
     ProgressBar regProgressBar;
+
+    public static final String keyName = "name", keyEmail = "email";
 
 
 
@@ -48,9 +60,11 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
         registerBtn.setOnClickListener(v -> {
+
             String email = emailEditText.getText().toString();
             String password = passwordREditText.getText().toString();
             String confPassword = confirmPasswordEditText.getText().toString();
+            String name = editTextName.getText().toString();
 
             if (email.isEmpty() || password.isEmpty() || confPassword.isEmpty())
                 Snackbar.make(v, "Please fill all the fields", Snackbar.LENGTH_LONG).show();
@@ -59,12 +73,27 @@ public class RegisterActivity extends AppCompatActivity {
             else if (!confPassword.equals(password))
                 Snackbar.make(v, "Passwords don't match", Snackbar.LENGTH_LONG).show();
             else {
-                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+
+                firebaseAuth = FirebaseAuth.getInstance();
+                db = FirebaseFirestore.getInstance();
                 registerBtn.setClickable(false);
                 regProgressBar.setVisibility(View.VISIBLE);
                 firebaseAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(RegisterActivity.this, task -> {
                             if (task.isSuccessful()) {
+                                //saving user details
+                                userID = firebaseAuth.getCurrentUser().getUid();
+                                DocumentReference documentReference = db.collection("users").document(userID);
+                                Map<String,Object> user = new HashMap<>();
+                                user.put("name",name);
+                                user.put("email",email);
+                                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.i("Information","Successfully added data to firestore");
+                                    }
+                                });
+
                                 Toast.makeText(RegisterActivity.this, "Registration successful. Logging in", Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                                 finish();
