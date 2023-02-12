@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -28,8 +31,13 @@ public class NewRequestActivity extends AppCompatActivity {
     @BindView(R.id.spinner)
     Spinner spinner;
     EditText editText;
+    @BindView(R.id.timePicker) EditText tp;
     Calendar myCalendar;
+    private int mHour, mMinute;
     public int a = 0;
+    private String format = "";
+    /*@BindView(R.id.timePicker) private TimePicker timePicker1;*/
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,22 +45,27 @@ public class NewRequestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_request);
         ButterKnife.bind(this);
 
-        Locale[] locales = Locale.getAvailableLocales();
+        /*Locale[] locales = Locale.getAvailableLocales();
         ArrayList<String> countries = new ArrayList<String>();
         for (Locale locale : locales) {
             String country = locale.getDisplayCountry();
             if (country.trim().length() > 0 && !countries.contains(country)) {
                 countries.add(country);
             }
-        }
+        }*/
+        ArrayList<String> categories = new ArrayList<String>();
+        categories.add("Grocery");
+        categories.add("Dairy Products");
+        categories.add("Medicines");
+        categories.add("Electrical Equipment");
 
-        Collections.sort(countries);
+        Collections.sort(categories);
         /*for (String country : countries) {
             System.out.println(country);
         }*/
 
         ArrayAdapter<String> countryAdapter = new ArrayAdapter<String>(NewRequestActivity.this,
-                android.R.layout.simple_spinner_item, countries);
+                android.R.layout.simple_spinner_item, categories);
 
         countryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the your spinner
@@ -84,6 +97,21 @@ public class NewRequestActivity extends AppCompatActivity {
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+        mHour = myCalendar.get(Calendar.HOUR_OF_DAY);
+        mMinute = myCalendar.get(Calendar.MINUTE);
+        TimePickerDialog.OnTimeSetListener time = new TimePickerDialog.OnTimeSetListener(){
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                tp.setText(hourOfDay + ":" + minute);
+            }
+        };
+        tp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new TimePickerDialog(NewRequestActivity.this,time,mHour,mMinute,false).show();
+            }
+        });
+
     }
     public void back(View view){
         startActivity(new Intent(this,BuyersActivity.class));
@@ -105,5 +133,32 @@ public class NewRequestActivity extends AppCompatActivity {
             view.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.lightBlue)));
         }
 
+    }
+    /*public void setTime(View view) {
+        int hour = timePicker1.getCurrentHour();
+        int min = timePicker1.getCurrentMinute();
+        showTime(hour, min);
+    }
+
+    public void showTime(int hour, int min) {
+        if (hour == 0) {
+            hour += 12;
+            format = "AM";
+        } else if (hour == 12) {
+            format = "PM";
+        } else if (hour > 12) {
+            hour -= 12;
+            format = "PM";
+        } else {
+            format = "AM";
+        }
+
+        time.setText(new StringBuilder().append(hour).append(" : ").append(min)
+                .append(" ").append(format));
+    }*/
+    public void mainActivity(View view){
+        startActivity(new Intent(this,BuyersActivity.class));
+        Toast.makeText(this, "New List added!", Toast.LENGTH_SHORT).show();
+        finish();
     }
 }

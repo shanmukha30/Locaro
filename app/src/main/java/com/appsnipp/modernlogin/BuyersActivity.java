@@ -105,4 +105,7 @@ public class BuyersActivity extends AppCompatActivity implements NavigationView.
     public void newList(View view){
         startActivity(new Intent(this,NewRequestActivity.class));
     }
+    public void active(View view){
+        startActivity(new Intent(this,ActiveListsActivity.class));
+    }
 }

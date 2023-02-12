@@ -30,8 +30,10 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -111,7 +113,7 @@
                 android:paddingTop="10dp"
                 android:paddingRight="10dp"
                 android:shadowRadius="10"
-                android:text="Select Country"
+                android:text="Select Category"
                 android:textColor="#232323"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -202,6 +204,7 @@
                 android:paddingRight="10dp"
                 android:textColor="#474343"
                 android:textColorHint="#807A7A" />
+
             <EditText
                 android:id="@+id/editTextItemName3"
                 android:layout_width="wrap_content"
@@ -218,6 +221,7 @@
                 android:paddingRight="10dp"
                 android:textColor="#474343"
                 android:textColorHint="#807A7A" />
+
             <EditText
                 android:id="@+id/editTextItemName4"
                 android:layout_width="wrap_content"
@@ -234,6 +238,7 @@
                 android:paddingRight="10dp"
                 android:textColor="#474343"
                 android:textColorHint="#807A7A" />
+
             <EditText
                 android:id="@+id/editTextItemName5"
                 android:layout_width="wrap_content"
@@ -250,6 +255,7 @@
                 android:paddingRight="10dp"
                 android:textColor="#474343"
                 android:textColorHint="#807A7A" />
+
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
@@ -261,8 +267,7 @@
                 android:shadowRadius="10"
                 android:text="Select estimated delivery date"
                 android:textColor="#232323"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/datepicker"
@@ -278,6 +283,34 @@
                 android:hint="-Select Date-"
                 android:inputType="textPersonName"
                 android:padding="5dp" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:elevation="10dp"
+                android:fontFamily="@font/amiko_bold"
+                android:padding="10dp"
+                android:shadowRadius="10"
+                android:text="Select estimated delivery time"
+                android:textColor="#232323"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/timePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittextlayout"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="-Select Time-"
+                android:padding="5dp" />
+
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
@@ -289,8 +322,8 @@
                 android:shadowRadius="10"
                 android:text="Total amount you are offering to pay"
                 android:textColor="#232323"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
+
             <EditText
                 android:id="@+id/editTextAmount"
                 android:layout_width="wrap_content"
@@ -302,11 +335,12 @@
                 android:background="@drawable/edittextlayout"
                 android:ems="10"
                 android:hint="Ex. \u20B9 200"
-                android:inputType="textPersonName"
+                android:inputType="number|textPersonName"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:textColor="#474343"
                 android:textColorHint="#807A7A" />
+
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
@@ -317,8 +351,7 @@
                 android:padding="10dp"
                 android:text="Select the range"
                 android:textColor="#232323"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -384,17 +417,10 @@
                 android:backgroundTint="#00BCD4"
                 android:elevation="10dp"
                 android:fontFamily="@font/amiko_bold"
+                android:onClick="mainActivity"
                 android:text="Submit List" />
         </LinearLayout>
     </ScrollView>
-
-
-
-
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
